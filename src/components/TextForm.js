@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+  const [text, setText] = useState("Enter text here");
   const handleUpClick = () => {
     let newTextUpperCase = text.toUpperCase();
     setText(newTextUpperCase);
@@ -14,7 +15,6 @@ export default function TextForm(props) {
   const handleonChange = (event) => {
     setText(event.target.value);
   };
-  const [text, setText] = useState("Enter text here");
   return (
     <>
       <div className="container">
@@ -51,6 +51,9 @@ export default function TextForm(props) {
         <p>
           {text.split(" ").length} Words and {text.length} Characters
         </p>
+        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <h2>Preview</h2>
+        <p>{text}</p>
       </div>
     </>
   );
