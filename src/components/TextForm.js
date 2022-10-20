@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
-  const [text, setText] = useState("Enter text here");
+  // const [text, setText] = useState("Enter text here");
+  const [text, setText] = useState("");
   const handleUpClick = () => {
     let newTextUpperCase = text.toUpperCase();
     setText(newTextUpperCase);
@@ -11,6 +12,11 @@ export default function TextForm(props) {
     let newTextLowercase = text.toLowerCase();
     setText(newTextLowercase);
     console.log("Text changed in Lowercase" + " : " + newTextLowercase);
+  };
+  const handleClearClick = () => {
+    let newTextClear = ('');
+    setText(newTextClear);
+    // console.log("Text changed in Lowercase" + " : " + newTextLowercase);
   };
   const handleonChange = (event) => {
     setText(event.target.value);
@@ -22,12 +28,15 @@ export default function TextForm(props) {
         <div className="mb-3">
           <textarea
             className="form-control"
-            value={text}  // for on change 
+            value={text} // for on change
             onChange={handleonChange}
             id="myBox"
             rows="8"
           ></textarea>
         </div>
+
+        {/* Convert to Uppercase */}
+
         <button
           className="btn btn-primary"
           style={{ marginRight: 16 }}
@@ -37,6 +46,8 @@ export default function TextForm(props) {
           Convert to Uppercase{" "}
         </button>
 
+        {/* Convert to Lowercase */}
+
         <button
           className="btn btn-primary"
           style={{ marginRight: 16 }}
@@ -44,6 +55,16 @@ export default function TextForm(props) {
         >
           {" "}
           Convert to Lowercase{" "}
+        </button>
+
+        {/* Clear Text */}
+
+        <button
+          className="btn btn-primary"
+          // style={{ marginRight: 16 }}
+          onClick={handleClearClick}
+        >
+          Clear Text{" "}
         </button>
       </div>
       <div className="container my-3">
