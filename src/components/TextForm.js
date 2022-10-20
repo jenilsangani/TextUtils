@@ -14,7 +14,7 @@ export default function TextForm(props) {
     console.log("Text changed in Lowercase" + " : " + newTextLowercase);
   };
   const handleClearClick = () => {
-    let newTextClear = ('');
+    let newTextClear = "";
     setText(newTextClear);
     // console.log("Text changed in Lowercase" + " : " + newTextLowercase);
   };
@@ -67,12 +67,16 @@ export default function TextForm(props) {
           Clear Text{" "}
         </button>
       </div>
+
+      {/* Your text summary */}
+
       <div className="container my-3">
         <h2>Your text summary</h2>
         <p>
           {text.split(" ").length} Words and {text.length} Characters
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
+
         <h2>Preview</h2>
         <p>{text}</p>
       </div>
