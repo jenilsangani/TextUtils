@@ -16,6 +16,7 @@ export default function TextForm(props) {
   const handleClearClick = () => {
     let newTextClear = "";
     setText(newTextClear);
+    console.log("you cleared this text" + " : " + text);
     // console.log("Text changed in Lowercase" + " : " + newTextLowercase);
   };
   const handleonChange = (event) => {
