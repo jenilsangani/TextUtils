@@ -17,13 +17,12 @@ export default function TextForm(props) {
     let newTextClear = "";
     setText(newTextClear);
     console.log("Cleared this text" + " : " + text);
-    // console.log("Text changed in Lowercase" + " : " + newTextLowercase);
   };
   const handleonChange = (event) => {
     setText(event.target.value);
   };
 
-  const hadlecopy = () => {
+  const handlecopy = () => {
     var text = document.getElementById("myBox");
     console.log("Copied this text " + " : " + text.value);
     text.select();
@@ -65,6 +64,16 @@ export default function TextForm(props) {
           Convert to Lowercase{" "}
         </button>
 
+        {/* copy text */}
+
+        <button
+          className="btn btn-primary"
+          style={{ marginRight: 16 }}
+          onClick={handlecopy}
+        >
+          Copy Text
+        </button>
+
         {/* Clear Text */}
 
         <button
@@ -75,15 +84,6 @@ export default function TextForm(props) {
           Clear Text{" "}
         </button>
 
-        {/* copy text */}
-
-        <button
-          className="btn btn-primary"
-          // style={{ marginRight: 16 }}
-          onClick={hadlecopy}
-        >
-          Copy Text
-        </button>
       </div>
 
       {/* Your text summary */}
