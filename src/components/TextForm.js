@@ -30,86 +30,63 @@ export default function TextForm(props) {
   };
 
   const handleExtraSpaces = () => {
-    let newText = text.split(/[ ]+/)
+    let newText = text.split(/[ ]+/);
     console.log("Removed extra spaces" + " : " + text);
-    setText(newText.join(" "))
-  }
-    let peiviewStyle = {
-      border: "1px dashed black",
-      padding: "10px",
-      background: "antiquewhite",
-      fontWeight: "600",
-    };
+    setText(newText.join(" "));
+  };
+  let peiviewStyle = {
+    border: "1px solid black",
+    padding: "10px",
+    background: "white",
+    fontWeight: "600",
+  };
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <h1>{props.heading}</h1>
         <div>
-          <textarea
-            className="form-control"
-            value={text} // for on change
-            onChange={handleonChange}
-            id="myBox"
-            rows="8"
-          ></textarea>
+
+         {/* for on change */}
+
+          <textarea className="form-control" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "lightgray" : "white",}}></textarea>
         </div>
 
         {/* Convert to Uppercase */}
 
-        <button
-          className="btn btn-primary"
-          style={{ marginRight: 16, marginTop: 16 }}
-          onClick={handleUpClick}
-        >
+        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleUpClick}>
           {" "}
           Convert to Uppercase{" "}
         </button>
 
         {/* Convert to Lowercase */}
 
-        <button
-          className="btn btn-primary"
-          style={{ marginRight: 16, marginTop: 16 }}
-          onClick={handleLowClick}
-        >
+        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleLowClick}>
           {" "}
           Convert to Lowercase{" "}
         </button>
 
         {/* copy text */}
 
-        <button
-          className="btn btn-primary"
-          style={{ marginRight: 16, marginTop: 16 }}
-          onClick={handlecopy}
-        >
+        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handlecopy}>
           Copy Text
         </button>
 
         {/* Remove extra spaces */}
 
-        <button
-          className="btn btn-primary"
-          style={{ marginRight: 16, marginTop: 16 }}
-          onClick={handleExtraSpaces}
-        >
+        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleExtraSpaces}>
           Remove extra spaces
         </button>
 
         {/* Clear Text */}
 
-        <button
-          className="btn btn-primary"
-          style={{ marginRight: 16, marginTop: 16 }}
-          onClick={handleClearClick}
-        >
+        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleClearClick}>
           Clear Text{" "}
         </button>
       </div>
 
       {/* Your text summary */}
 
-      <div className="container my-3">
+      <div className="container my-3" style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <h2>Your text summary</h2>
         <p>
           {text.split(" ").length} Words and {text.length} Characters
