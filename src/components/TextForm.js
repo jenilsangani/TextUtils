@@ -16,7 +16,7 @@ export default function TextForm(props) {
   const handleClearClick = () => {
     let newTextClear = "";
     setText(newTextClear);
-    console.log("you cleared this text" + " : " + text);
+    console.log("Cleared this text" + " : " + text);
     // console.log("Text changed in Lowercase" + " : " + newTextLowercase);
   };
   const handleonChange = (event) => {
@@ -25,7 +25,7 @@ export default function TextForm(props) {
 
   const hadlecopy = () => {
     var text = document.getElementById("myBox");
-    console.log("You copy this text" + " : " + text.value);
+    console.log("Copied this text " + " : " + text.value);
     text.select();
     navigator.clipboard.writeText(text.value);
   };
@@ -75,7 +75,7 @@ export default function TextForm(props) {
           Clear Text{" "}
         </button>
 
-    {/* copy text */}
+        {/* copy text */}
 
         <button
           className="btn btn-primary"
