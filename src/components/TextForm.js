@@ -24,10 +24,9 @@ export default function TextForm(props) {
   };
 
   const hadlecopy = () => {
-    console.log("I am Copy");
     var text = document.getElementById("myBox");
+    console.log("You copy this text" + " : " + text.value);
     text.select();
-    text.setSelectionRange(0, 9999999);
     navigator.clipboard.writeText(text.value);
   };
   return (
