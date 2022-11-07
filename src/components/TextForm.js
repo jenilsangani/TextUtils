@@ -22,6 +22,14 @@ export default function TextForm(props) {
   const handleonChange = (event) => {
     setText(event.target.value);
   };
+
+  const hadlecopy = () => {
+    console.log("I am Copy");
+    var text = document.getElementById("myBox");
+    text.select();
+    text.setSelectionRange(0, 9999999);
+    navigator.clipboard.writeText(text.value);
+  };
   return (
     <>
       <div className="container">
@@ -62,10 +70,20 @@ export default function TextForm(props) {
 
         <button
           className="btn btn-primary"
-          // style={{ marginRight: 16 }}
+          style={{ marginRight: 16 }}
           onClick={handleClearClick}
         >
           Clear Text{" "}
+        </button>
+
+    {/* copy text */}
+
+        <button
+          className="btn btn-primary"
+          // style={{ marginRight: 16 }}
+          onClick={hadlecopy}
+        >
+          Copy Text
         </button>
       </div>
 
