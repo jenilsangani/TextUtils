@@ -5,13 +5,15 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 
 function App() {
-  const [mode, setkMode] = useState("dark");
+  const [mode, setkMode] = useState("light");
   const toggleMode = () => {
     if (mode === "light") {
-      setkMode = "dark";
-    }
-    else{
-      setkMode = "light";
+      setkMode("dark");
+      document.body.style.backgroundColor = 'black'
+    } else {
+      setkMode("light");
+      document.body.style.backgroundColor = "white";
+
     }
   };
   return (
