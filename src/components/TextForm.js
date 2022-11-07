@@ -28,11 +28,23 @@ export default function TextForm(props) {
     text.select();
     navigator.clipboard.writeText(text.value);
   };
+
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/)
+    console.log("Removed extra spaces" + " : " + text);
+    setText(newText.join(" "))
+  }
+    let peiviewStyle = {
+      border: "1px dashed black",
+      padding: "10px",
+      background: "antiquewhite",
+      fontWeight: "600",
+    };
   return (
     <>
       <div className="container">
         <h1>{props.heading}</h1>
-        <div className="mb-3">
+        <div>
           <textarea
             className="form-control"
             value={text} // for on change
@@ -46,7 +58,7 @@ export default function TextForm(props) {
 
         <button
           className="btn btn-primary"
-          style={{ marginRight: 16 }}
+          style={{ marginRight: 16, marginTop: 16 }}
           onClick={handleUpClick}
         >
           {" "}
@@ -57,7 +69,7 @@ export default function TextForm(props) {
 
         <button
           className="btn btn-primary"
-          style={{ marginRight: 16 }}
+          style={{ marginRight: 16, marginTop: 16 }}
           onClick={handleLowClick}
         >
           {" "}
@@ -68,22 +80,31 @@ export default function TextForm(props) {
 
         <button
           className="btn btn-primary"
-          style={{ marginRight: 16 }}
+          style={{ marginRight: 16, marginTop: 16 }}
           onClick={handlecopy}
         >
           Copy Text
+        </button>
+
+        {/* Remove extra spaces */}
+
+        <button
+          className="btn btn-primary"
+          style={{ marginRight: 16, marginTop: 16 }}
+          onClick={handleExtraSpaces}
+        >
+          Remove extra spaces
         </button>
 
         {/* Clear Text */}
 
         <button
           className="btn btn-primary"
-          style={{ marginRight: 16 }}
+          style={{ marginRight: 16, marginTop: 16 }}
           onClick={handleClearClick}
         >
           Clear Text{" "}
         </button>
-
       </div>
 
       {/* Your text summary */}
@@ -96,7 +117,7 @@ export default function TextForm(props) {
         <p>{0.008 * text.split(" ").length} Minutes read</p>
 
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p style={peiviewStyle}>{text}</p>
       </div>
     </>
   );
