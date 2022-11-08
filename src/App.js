@@ -18,12 +18,17 @@ function App() {
   console.log(mode);
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
+      <Navbar
+        title="TextUtils"
+        aboutText="About TextUtils"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
 
       {/* set default */}
       {/* <Navbar /> */}
       <div className="container my-3">
-        <TextForm heading="Enter your text to analyze below" mode={mode}/>
+        <TextForm heading="Enter your text to analyze below" mode={mode} />
         {/* <About /> */}
       </div>
     </>
