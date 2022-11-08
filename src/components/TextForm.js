@@ -39,6 +39,7 @@ export default function TextForm(props) {
     padding: "10px",
     background: "white",
     fontWeight: "600",
+    color:"black"
   };
   return (
     <>
@@ -48,7 +49,7 @@ export default function TextForm(props) {
 
          {/* for on change */}
 
-          <textarea className="form-control" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "lightgray" : "white",}}></textarea>
+          <textarea className="form-control" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "gray" : "white",color:props.mode === "dark" ? "white" : "black"}}></textarea>
         </div>
 
         {/* Convert to Uppercase */}
@@ -94,7 +95,7 @@ export default function TextForm(props) {
         <p>{0.008 * text.split(" ").length} Minutes read</p>
 
         <h2>Preview</h2>
-        <p style={peiviewStyle}>{text}</p>
+        <p style={peiviewStyle}>{text.length>0?text:"Enter somthing in textbox to preview it here "}</p>
       </div>
     </>
   );
