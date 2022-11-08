@@ -1,11 +1,16 @@
 import { useState } from "react";
 import "./App.css";
+import Alert from "./components/Alert";
 // import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 
 function App() {
   const [mode, setkMode] = useState("light");
+  const [alert, setkalert] = useState(null);
+  const showAlert = (message, type) => {
+
+  }  
   const toggleMode = () => {
     if (mode === "light") {
       setkMode("dark");
@@ -18,13 +23,8 @@ function App() {
   console.log(mode);
   return (
     <>
-      <Navbar
-        title="TextUtils"
-        aboutText="About TextUtils"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
-
+      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
+      <Alert Alert="This is a alert"/>
       {/* set default */}
       {/* <Navbar /> */}
       <div className="container my-3">
