@@ -15,12 +15,12 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#062446";
-      document.title = "TextUtils - DarkMode"
+      // document.title = "TextUtils - DarkMode"  // for change title
       showAlert("Dark mode has been enabled", "success"); //Alert msg
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      document.title = "TextUtils - LightMode"
+      // document.title = "TextUtils - LightMode"  // for change title
       showAlert("Light mode has been enabled", "success"); //Alert msg    
     }
   };
@@ -39,7 +39,7 @@ function App() {
     // alert timeout
 
     setTimeout(() => {
-      setAlert(null);
+      setAlert(null)
     },1500)
   }  
 
