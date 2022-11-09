@@ -15,10 +15,12 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#062446";
+      document.title = "TextUtils - DarkMode"
       showAlert("Dark mode has been enabled", "success"); //Alert msg
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
+      document.title = "TextUtils - LightMode"
       showAlert("Light mode has been enabled", "success"); //Alert msg    
     }
   };
