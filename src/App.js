@@ -1,4 +1,4 @@
-import { type } from "@testing-library/user-event/dist/type";
+// import { type } from "@testing-library/user-event/dist/type";
 import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
@@ -22,7 +22,8 @@ function App() {
       showAlert("Light mode has been enabled", "success"); //Alert msg    
     }
   };
-  console.log("Enabled" + " : " + mode + " " + "mode");    // for console
+  
+  // console.log("Enabled : " + mode + " mode");    // for console
 
   // Alert
 
@@ -31,7 +32,7 @@ function App() {
     setAlert({
       msg : message,
       type : type
-    })
+    });
 
     // alert timeout
 
