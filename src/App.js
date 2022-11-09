@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
@@ -14,23 +15,26 @@ function App() {
     if (mode === "light") {
       setkMode("dark");
       document.body.style.backgroundColor = "#062446";
+      showAlert("Dark mode has been enabled", "success"); //Alert msg
     } else {
       setkMode("light");
       document.body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled", "success"); //Alert msg    
     }
   };
-  console.log(mode);
+  console.log("Enabled" + " : " + mode + " " + "mode");    // for console
 
   // Alert
 
-  const [alert, setkAlert] = useState(null);
+  const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
-    setkAlert({
+    setAlert({
       msg : message,
       type : type
     })
   }  
-  console.log("alert msg" + " : " + alert);
+  // console.log("alert msg" + " : " + alert);   // for console
+
   return (
     <>
       <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
