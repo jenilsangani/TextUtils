@@ -23,7 +23,7 @@ function App() {
     }
   };
   
-  // console.log("Enabled : " + mode + " mode");    // for console
+  console.log("Enabled : " + mode + " mode");    // for console
 
   // Alert
 
