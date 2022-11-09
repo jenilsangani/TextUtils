@@ -6,11 +6,10 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 
 function App() {
-  const [mode, setkMode] = useState("light");
-  const [alert, setkalert] = useState(null);
-  const showAlert = (message, type) => {
 
-  }  
+  // dark mode
+  
+  const [mode, setkMode] = useState("light");
   const toggleMode = () => {
     if (mode === "light") {
       setkMode("dark");
@@ -21,10 +20,21 @@ function App() {
     }
   };
   console.log(mode);
+
+  // Alert
+
+  const [alert, setkAlert] = useState(null);
+  const showAlert = (message, type) => {
+    setkAlert({
+      msg : message,
+      type : type
+    })
+  }  
+  console.log("alert msg" + " : " + alert);
   return (
     <>
       <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
-      <Alert Alert="This is a alert"/>
+      <Alert alert = {alert} />
       {/* set default */}
       {/* <Navbar /> */}
       <div className="container my-3">
