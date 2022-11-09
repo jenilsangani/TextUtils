@@ -73,6 +73,6 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: "Set itle here",
+  title: "Set title here",
   aboutText: "About text here",
 };

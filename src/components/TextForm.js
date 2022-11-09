@@ -6,17 +6,20 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newTextUpperCase = text.toUpperCase();
     setText(newTextUpperCase);
-    console.log("Text changed in Uppercase" + " : " + newTextUpperCase);
+    props.showAlert("Converted to Uppercase", "success"); // for alert
+    console.log("Text changed in Uppercase" + " : " + newTextUpperCase); // for console
   };
   const handleLowClick = () => {
     let newTextLowercase = text.toLowerCase();
     setText(newTextLowercase);
-    console.log("Text changed in Lowercase" + " : " + newTextLowercase);
+    props.showAlert("Converted to Lowercase", "success"); // for alert
+    console.log("Text changed in Lowercase" + " : " + newTextLowercase); // for console
   };
   const handleClearClick = () => {
     let newTextClear = "";
     setText(newTextClear);
-    console.log("Cleared this text" + " : " + text);
+    props.showAlert("Cleared text", "success"); // for alert
+    console.log("Cleared this text" + " : " + text); // for console
   };
   const handleonChange = (event) => {
     setText(event.target.value);
@@ -24,15 +27,17 @@ export default function TextForm(props) {
 
   const handlecopy = () => {
     var text = document.getElementById("myBox");
-    console.log("Copied this text " + " : " + text.value);
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to Clipboard", "success"); // for alert
+    console.log("Copied text" + " : " + text.value); // for console
   };
 
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
-    console.log("Removed extra spaces" + " : " + text);
     setText(newText.join(" "));
+    console.log("Removed extra space" + " : " + text); // for console
+    props.showAlert("Extra spaces removed", "success"); // for alert
   };
   let peiviewStyle = {
     border: "1px solid black",
