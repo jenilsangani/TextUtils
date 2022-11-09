@@ -39,7 +39,7 @@ export default function TextForm(props) {
     console.log("Removed extra space" + " : " + text); // for console
     props.showAlert("Extra spaces removed", "success"); // for alert
   };
-  let peiviewStyle = {
+  let previewStyle = {
     border: "1px solid black",
     padding: "10px",
     background: "white",
@@ -100,7 +100,7 @@ export default function TextForm(props) {
         <p>{0.008 * text.split(" ").length} Minutes read</p>
 
         <h2>Preview</h2>
-        <p style={peiviewStyle}>{text.length>0?text:"Enter somthing in textbox to preview it here "}</p>
+        <p style={previewStyle}>{text.length>0?text:"Enter somthing in textbox to preview it here "}</p>
       </div>
     </>
   );
