@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 
@@ -33,7 +33,7 @@ function App() {
   const showAlert = (message, type) => {
     setAlert({
       msg : message,
-      type : type
+      type : type,
     });
 
     // alert timeout
@@ -47,11 +47,9 @@ function App() {
     <>
       <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert = {alert} />
-      {/* set default */}
-      {/* <Navbar /> */}
       <div className="container my-3">
         <TextForm showAlert = {showAlert} heading="Enter your text to analyze below" mode={mode} />
-        {/* <About /> */}
+        <About />
       </div>
     </>
   );
