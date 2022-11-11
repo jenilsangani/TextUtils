@@ -26,7 +26,7 @@ function App() {
   };
   
   console.log("Enabled : " + mode + " mode");    // for console
-
+  
   // Alert
 
   const [alert, setAlert] = useState(null);
