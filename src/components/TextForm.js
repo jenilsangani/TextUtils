@@ -54,7 +54,7 @@ export default function TextForm(props) {
 
          {/* for on change */}
 
-          <textarea className="form-control mx-1 my-1" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "gray" : "white",color:props.mode === "dark" ? "white" : "black"}}></textarea>
+          <textarea className="form-control mx-1 my-1" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "#13466e" : "white",color:props.mode === "dark" ? "white" : "black"}}></textarea>
         </div>
 
         {/* Convert to Uppercase */}
@@ -98,7 +98,7 @@ export default function TextForm(props) {
         <p>
           {text.split(" " ).filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
 
         <h2>Preview</h2>
         <p style={previewStyle}>{text.length>0?text:"Enter somthing in textbox to preview it here "}</p>
