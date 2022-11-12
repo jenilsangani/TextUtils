@@ -49,7 +49,7 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container" style={{ color: props.mode === "dark" ? "white" : "black" }}>
-        <h1>{props.heading}</h1>
+        <h2 className='mb-3'>{props.heading}</h2>
         <div>
 
          {/* for on change */}
@@ -59,33 +59,33 @@ export default function TextForm(props) {
 
         {/* Convert to Uppercase */}
 
-        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleUpClick}>
           {" "}
           Convert to Uppercase{" "}
         </button>
 
         {/* Convert to Lowercase */}
 
-        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleLowClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleLowClick}>
           {" "}
           Convert to Lowercase{" "}
         </button>
 
         {/* copy text */}
 
-        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handlecopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handlecopy}>
           Copy Text
         </button>
 
         {/* Remove extra spaces */}
 
-        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleExtraSpaces}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleExtraSpaces}>
           Remove extra spaces
         </button>
 
         {/* Clear Text */}
 
-        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleClearClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleClearClick}>
           Clear Text{" "}
         </button>
         
