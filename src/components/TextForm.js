@@ -30,7 +30,7 @@ export default function TextForm(props) {
     text.select();
     navigator.clipboard.writeText(text.value);
     props.showAlert("Copied to Clipboard", "success"); // for alert
-    // console.log("Copied text" + " : " + text.value); // for console
+    // tele.log("Copied text" + " : " + text.value); // for console
   };
 
   const handleExtraSpaces = () => {
@@ -54,40 +54,41 @@ export default function TextForm(props) {
 
          {/* for on change */}
 
-          <textarea className="form-control" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "gray" : "white",color:props.mode === "dark" ? "white" : "black"}}></textarea>
+          <textarea className="form-control mx-1 my-1" value={text} onChange={handleonChange} id="myBox" rows="8" style={{backgroundColor: props.mode === "dark" ? "gray" : "white",color:props.mode === "dark" ? "white" : "black"}}></textarea>
         </div>
 
         {/* Convert to Uppercase */}
 
-        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleUpClick}>
           {" "}
           Convert to Uppercase{" "}
         </button>
 
         {/* Convert to Lowercase */}
 
-        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleLowClick}>
+        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleLowClick}>
           {" "}
           Convert to Lowercase{" "}
         </button>
 
         {/* copy text */}
 
-        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handlecopy}>
+        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handlecopy}>
           Copy Text
         </button>
 
         {/* Remove extra spaces */}
 
-        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleExtraSpaces}>
+        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleExtraSpaces}>
           Remove extra spaces
         </button>
 
         {/* Clear Text */}
 
-        <button className="btn btn-primary" style={{ marginRight: 16, marginTop: 16 }} onClick={handleClearClick}>
+        <button className="btn btn-primary mx-1 my-1" style={{ marginRight: 16, marginTop: 16 }} onClick={handleClearClick}>
           Clear Text{" "}
         </button>
+        
       </div>
 
       {/* Your text summary */}
@@ -95,7 +96,7 @@ export default function TextForm(props) {
       <div className="container my-3" style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters
+          {text.split(" " ).filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
 

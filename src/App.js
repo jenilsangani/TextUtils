@@ -22,7 +22,7 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = "white";
       // document.title = "TextUtils - LightMode"  // for change title
-      showAlert("Light mode has been enabled", "success"); //Alert msg    
+      showAlert("Light mode has been enabled", "ssuccess"); //Alert msg    
     }
   };
   
